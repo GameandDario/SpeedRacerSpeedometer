@@ -45,11 +45,15 @@ class Speedometer extends Component {
             labelStyle,
             labelNoteStyle,
         } = this.props;
+
         const degree = 180;
+
         const perLevelDegree = calculateDegreeFromLabels(degree, labels);
+
         const label = calculateLabelFromValue(
             limitValue(value, minValue, maxValue, allowedDecimals), labels, minValue, maxValue,
         );
+        
         Animated.timing(
             this.speedometerValue,
             {

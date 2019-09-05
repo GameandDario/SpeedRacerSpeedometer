@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/stephaneurth/.nvm/versions/node/v10.16.0/bin/node /Users/stephaneurth/.nvm/versions/node/v10.16.0/bin/yarn install
+  /Users/stephaneurth/.nvm/versions/node/v10.16.0/bin/node /Users/stephaneurth/.nvm/versions/node/v10.16.0/bin/yarn
 
 PATH: 
   /usr/local/mysql-5.7.26-macos10.14-x86_64/bin:/Users/stephaneurth/.nvm/versions/node/v10.16.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin
@@ -32,6 +32,7 @@ npm manifest:
       "react": "16.8.3",
       "react-dom": "^16.8.6",
       "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
+      "react-native-speedometer": "^1.0.3",
       "react-native-web": "^0.11.4"
     },
     "devDependencies": {
@@ -4078,7 +4079,7 @@ Lockfile:
     dependencies:
       asap "~2.0.3"
   
-  prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+  prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
     version "15.7.2"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
     integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
