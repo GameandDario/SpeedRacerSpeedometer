@@ -3,7 +3,23 @@ import { StyleSheet, Dimensions } from 'react-native';
 export const { width } = Dimensions.get('window');
 
 export default StyleSheet.create({
+    maincontainer: {
+        flex: 1,
+    },
+
+    container: {
+        flex: 1,
+    },
+    textInput: {
+        borderBottomWidth: 0.3,
+        borderBottomColor: 'black',
+        height: 25,
+        fontSize: 16,
+        marginVertical: 50,
+        marginHorizontal: 20,
+    },
     wrapper: {
+        flex: 1,
         marginVertical: 5,
         alignSelf: 'center',
     },

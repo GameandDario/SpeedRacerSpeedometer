@@ -6,8 +6,11 @@ import {
     Animated,
     Easing,
     Text,
+    TextInput
 } from 'react-native';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+
+// import RNSpeedometer from 'react-native-speedometer';
 
 // Utils
 import calculateDegreeFromLabels from './utils/calculate-degree-from-labels';
@@ -22,8 +25,14 @@ import style, { width as deviceWidth } from './style/style';
 class Speedometer extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            value: 0,
+        };
         this.speedometerValue = new Animated.Value(props.defaultValue);
     }
+
+    onChange = (value) => this.setState({ value: parseInt(value) });
+    
 
     render() {
         const {
@@ -69,8 +78,23 @@ class Speedometer extends Component {
         });
 
         const currentSize = validateSize(size, deviceWidth - 20);
+
+
         return (
-            <SafeAreaView>
+            <SafeAreaView style={[style.maincontainer]}>
+
+                <View style={[style.container]}>
+                    <TextInput 
+                        placeholder="Speedometer Value" 
+                        style={[style.textInput]} 
+                        onChangeText={this.onChange} 
+                        value ={this.setState.value} />
+
+                    {/* <RNSpeedometer value ={this.state.value} /> */}
+                </View>
+
+
+
                 <View style={[style.wrapper, {
                 width: currentSize,
                 height: currentSize / 2,
@@ -194,26 +218,26 @@ Speedometer.defaultProps = {
     labelNoteStyle: {},
 };
 
-// Speedometer.propTypes = {
-//     value: PropTypes.number.isRequired,
-//     defaultValue: PropTypes.number,
-//     size: PropTypes.number,
-//     minValue: PropTypes.number,
-//     maxValue: PropTypes.number,
-//     easeDuration: PropTypes.number,
-//     allowedDecimals: PropTypes.number,
-//     labels: PropTypes.array,
-//     needleImage: PropTypes.any,
-//     wrapperStyle: PropTypes.object,
-//     outerCircleStyle: PropTypes.object,
-//     halfCircleStyle: PropTypes.object,
-//     imageWrapperStyle: PropTypes.object,
-//     imageStyle: PropTypes.object,
-//     innerCircleStyle: PropTypes.object,
-//     labelWrapperStyle: PropTypes.object,
-//     labelStyle: PropTypes.object,
-//     labelNoteStyle: PropTypes.object,
-// };
+Speedometer.propTypes = {
+    value: PropTypes.number.isRequired,
+    defaultValue: PropTypes.number,
+    size: PropTypes.number,
+    minValue: PropTypes.number,
+    maxValue: PropTypes.number,
+    easeDuration: PropTypes.number,
+    allowedDecimals: PropTypes.number,
+    labels: PropTypes.array,
+    needleImage: PropTypes.any,
+    wrapperStyle: PropTypes.object,
+    outerCircleStyle: PropTypes.object,
+    halfCircleStyle: PropTypes.object,
+    imageWrapperStyle: PropTypes.object,
+    imageStyle: PropTypes.object,
+    innerCircleStyle: PropTypes.object,
+    labelWrapperStyle: PropTypes.object,
+    labelStyle: PropTypes.object,
+    labelNoteStyle: PropTypes.object,
+};
 
 export default Speedometer;
 
